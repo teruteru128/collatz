@@ -1,18 +1,20 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <string.h>
 #include <ctype.h>
+#include <inttypes.h>
 
 #include "collatz.h"
 
 int main(int argc, char** argv){
-    int n;
+    uint64_t n;
     char* instr;
     size_t length;
     size_t i;
     int flg = 1;
-    int count;
+    uint64_t count;
 
     if(argc != 2){
         printf("[USEAGE] %s numeric...\n", argv[0]);
@@ -30,9 +32,9 @@ int main(int argc, char** argv){
         exit(1);
     }
 
-    n = atoi(instr);
-    count = collatz(n);
-    printf("%d\n", count);
+    n = strtoull(instr, NULL, 10);
+    count = collatz_ull(n);
+    printf("%lu\n", count);
 
     return 0;
 }
