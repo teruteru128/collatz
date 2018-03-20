@@ -1,5 +1,5 @@
 COMPILER = gcc
-CFLAGS = -g -Wall
+CFLAGS = -g -Wall -shared
 LDFLAGS = 
 LIBS =
 INCLUDE = -I./include
